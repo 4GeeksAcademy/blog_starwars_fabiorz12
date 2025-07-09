@@ -1,16 +1,30 @@
-import rigoImageUrl from "../assets/img/rigo-baby.jpg";
-import useGlobalReducer from "../hooks/useGlobalReducer.jsx";
 
-export const Home = () => {
+import CardPlanet from "../components/CardPlanet"
 
-  const {store, dispatch} =useGlobalReducer()
 
-	return (
-		<div className="text-center mt-5">
-			<h1>Hello Rigo!!</h1>
-			<p>
-				<img src={rigoImageUrl} />
-			</p>
-		</div>
-	);
-}; 
+const Home = () =>{
+
+
+
+    return(
+        <>
+        <h1>Star Wars Explorer</h1>
+
+        <h2>Planets</h2>
+        <div className="row">
+            {loadingPlanets? (
+                <p>Loading planets...</p>
+            ):(
+                planets.map((planet, index) => (
+                    <div className="col-md-4 mb-4" key={key}>
+                        <CardPlanet planet={planet} uid={planet.uid}/>
+                    </div>
+                ))
+            )}
+
+        </div>
+        </>
+    )
+};
+
+export default Home;

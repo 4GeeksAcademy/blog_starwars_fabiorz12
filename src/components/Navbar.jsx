@@ -1,19 +1,21 @@
-import { Link } from "react-router-dom";
+const Navbar = () =>{
+    return (
+        <nav className="navbar navbar-ligth bg-light">
+            <div className="container">
+                <span>Star Wars</span>
+            </div>
+            <div className="dropdown">
+                <button className="btn btn-primary dropdown-toggle" type="button" data-bs-toggle="dropdown">
+                    Favorites
+                </button>
+                <ul className="dropdown-menu dropdown-menu-end">
+                    <li className="dropdown-item text-muted">No Favorites</li>
 
-export const Navbar = () => {
+                </ul>
+            </div>
 
-	return (
-		<nav className="navbar navbar-light bg-light">
-			<div className="container">
-				<Link to="/">
-					<span className="navbar-brand mb-0 h1">React Boilerplate</span>
-				</Link>
-				<div className="ml-auto">
-					<Link to="/demo">
-						<button className="btn btn-primary">Check the Context in action</button>
-					</Link>
-				</div>
-			</div>
-		</nav>
-	);
-};
+        </nav>
+    )
+}
+
+export default Navbar
