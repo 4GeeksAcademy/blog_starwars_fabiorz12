@@ -1,7 +1,9 @@
+import {Link} from "react-router-dom"
+
 const CardPlanet = ({planet, uid}) =>{
     return(
         <div className="card">
-            <img src="https://via.placeholder.com/400x200" className="card-img-top" alt={planet.name} />
+            <img src="https://placehold.co/400x200" className="card-img-top" alt={planet.name} />
             <div className="card-body">
                 <h5 className="card-text">{planet.name}</h5>
 

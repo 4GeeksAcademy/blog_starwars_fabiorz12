@@ -11,5 +11,6 @@ export const getPlanets = async () => {
 export const getPlanetById = async(id) =>{
     const response = await fetch(`${BASE_URL}/planets/${id}`)
     if (!response.ok) throw new Error('Error fetching planet')
-    return await response.json();
+    const data = await response.json()
+    return data.result;
 }
