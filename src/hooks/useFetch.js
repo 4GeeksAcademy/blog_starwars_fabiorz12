@@ -17,8 +17,8 @@ export const useFetch = (fetchFunction, id = null) => {
             }
         };
 
-        fetchData(fetchFunction, id);
+        fetchData();
 
-    }, []);
+    }, [fetchFunction, id]);
     return { data, loading, error }
 };

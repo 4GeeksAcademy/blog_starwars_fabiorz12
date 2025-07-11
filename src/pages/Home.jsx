@@ -5,7 +5,7 @@ import { useFetch } from "../hooks/useFetch";
 
 
 const Home = () =>{
-    const {data : planets, loading: loadingPlanets} = useFetch(getPlanets);
+    const {data : planets, loading: loadingPlanets} = useFetch(getPlanets, null);
 
     return(
         <>
@@ -18,7 +18,7 @@ const Home = () =>{
                 ):(
                 planets.map((planet, index) => (
                     <div className="col-md-4" key={index}>
-                        <CardPlanet planet={planet} uid={planet.uid}/>
+                        <CardPlanet planet={planet} uid={index + 1}/>
                     </div>
                 ))
             )}

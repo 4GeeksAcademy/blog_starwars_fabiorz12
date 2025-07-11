@@ -2,17 +2,20 @@ import { BrowserRouter as Router, Routes, Route, BrowserRouter } from "react-rou
 import Layout from "./components/Layout";
 import Home from "./pages/Home";
 import PlanetDetail from "./pages/PlanetDetail";
+import { GlobalProvider } from "./context/GlobalContext";
 
-const App = () =>{
+const App = () => {
     return (
-        <BrowserRouter>
-            <Layout>
-                <Routes>
-                    <Route path="/" element={<Home/>}/>
-                    <Route path="/planet/:id" element={<PlanetDetail/>} />
-                </Routes>
-            </Layout>
-        </BrowserRouter>
+        <GlobalProvider>
+            <BrowserRouter>
+                <Layout>
+                    <Routes>
+                        <Route path="/" element={<Home />} />
+                        <Route path="/planet/:id" element={<PlanetDetail />} />
+                    </Routes>
+                </Layout>
+            </BrowserRouter>
+        </GlobalProvider>
     )
 };
 
